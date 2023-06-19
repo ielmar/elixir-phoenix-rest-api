@@ -5,7 +5,7 @@ defmodule PaymentApi.MixProject do
     [
       app: :payment_api,
       version: "0.1.0",
-      elixir: "~> 1.13.4",
+      elixir: System.get_env("ELIXIR_VERSION") || "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
@@ -35,6 +35,7 @@ defmodule PaymentApi.MixProject do
       {:phoenix, "~> 1.7.6"},
       {:phoenix_live_dashboard, "~> 0.8.0"},
       {:swoosh, "~> 1.3"},
+      {:hackney, "~> 1.9"},
       {:finch, "~> 0.13"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
